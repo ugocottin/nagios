@@ -8,3 +8,7 @@ RUN apt-get update && \
 RUN download-mibs
 
 RUN wget http://pastebin.com/raw.php?i=p3QyuXzZ -O /usr/share/snmp/mibs/ietf/SNMPv2-PDU
+
+COPY startup.sh startup.sh
+
+CMD [ "/bin/bash", "startup.sh" ]
