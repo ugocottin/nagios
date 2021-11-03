@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nagios:
+    build:
+      context: .
+    volumes:
+      - ./etc/:/opt/nagios/etc/
+    ports:
+      - 8080:80
+    environment:
+      - NAGIOS_TIMEZONE=Europe/Paris
