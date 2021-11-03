@@ -6,7 +6,10 @@ services:
       context: .
     volumes:
       - ./etc/:/opt/nagios/etc/
+      - ./snmpd.conf:/etc/snmp/snmpd.conf
     ports:
       - 8080:80
+      - 161:161/udp
+      - 161:161/tcp
     environment:
       - NAGIOS_TIMEZONE=Europe/Paris
